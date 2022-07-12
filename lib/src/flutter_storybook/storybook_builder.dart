@@ -1,31 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
-import 'storybook_delegate.dart';
+import '../storybook_delegate.dart';
 
-class StoryBookScreen extends StatefulWidget {
+abstract class StorybookFLutter {
+  List<Story> getMaterialStory();
+  List<Story> getWidgetsStory();
+  List<Story> getScreenStory();
+}
+
+class FlutterStorybookScreen extends StatefulWidget {
   static const routeName = '/story-book';
 
+  final StorybookFLutter storybookFLutter;
   final StorybookDelegate storybookDelegate;
 
-  const StoryBookScreen({
+  const FlutterStorybookScreen({
     Key? key,
+    required this.storybookFLutter,
     required this.storybookDelegate,
   }) : super(key: key);
 
   @override
-  StoryBookScreenState createState() => StoryBookScreenState();
+  State<FlutterStorybookScreen> createState() => _FlutterStorybookScreenState();
 }
 
-class StoryBookScreenState extends State<StoryBookScreen> {
+class _FlutterStorybookScreenState extends State<FlutterStorybookScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: buildStorybook(widget.storybookDelegate),
+      body: buildStorybook(widget.storybookFLutter),
     );
   }
 
-  Widget buildStorybook(StorybookDelegate storybookDelegate) {
+  Widget buildStorybook(StorybookFLutter storybookDelegate) {
     return Storybook(
       plugins: initializePlugins(
         initialDeviceFrameData: DeviceFrameData(
@@ -50,7 +58,7 @@ class StoryBookScreenState extends State<StoryBookScreen> {
           locale: const Locale('en', ''),
         );
       },
-      initialStory: storybookDelegate.intStory,
+      initialStory: widget.storybookDelegate.intStory,
       stories: [
         ...storybookDelegate.getMaterialStory(),
         ...storybookDelegate.getWidgetsStory(),
