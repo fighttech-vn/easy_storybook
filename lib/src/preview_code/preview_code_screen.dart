@@ -45,9 +45,10 @@ class _PreviewCodeScreenState extends State<PreviewCodeScreen> {
   void _handleCode(bool isSuccess) {
     if (isSuccess) {
       widget.sharedPreferences.setBool(keyPreviewCode, true).then((value) {
-        Navigator.push(
+        Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => widget.storyBookScreen),
+          (_) => false,
         ).then((value) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
