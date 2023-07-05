@@ -1,3 +1,6 @@
+## 1.0.6
+* Update build flutter 3.10 and dart 3
+
 ## 1.0.4
 * feat(Preview): pushAndRemoveUntil
 
