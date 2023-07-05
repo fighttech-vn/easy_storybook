@@ -1,11 +1,16 @@
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
-  strong-mode:
-    implicit-dynamic: true
+  language:
+    strict-raw-types: false
   errors:
     todo: ignore
   exclude:
+    - "**/*.g.dart"
+    - "**/*.gr.dart"
+    - "**/*.freezed.dart"
+    - "**/*.config.dart"
+    - "**/*.module.dart"
 
 linter:
   rules:

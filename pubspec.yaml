@@ -1,10 +1,10 @@
 name: easy_storybook
 description: EasyStorybook Project
-version: 1.0.5
+version: 1.0.6
 homepage: https://github.com/FightTech-VN/easy_storybook
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -16,7 +16,8 @@ dependencies:
   dio: ^5.0.1
   shared_preferences: ^2.0.18
 
-  widgetbook: 2.2.1
+  widgetbook:
+    path: packages/widgetbook
 
 dev_dependencies:
   flutter_test:
