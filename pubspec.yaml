@@ -16,8 +16,7 @@ dependencies:
   dio: ^5.0.1
   shared_preferences: ^2.0.18
 
-  widgetbook:
-    path: packages/widgetbook
+  widgetbook: ^3.1.0
 
 dev_dependencies:
   flutter_test:

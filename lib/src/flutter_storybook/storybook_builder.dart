@@ -47,7 +47,6 @@ class _FlutterStorybookScreenState extends State<FlutterStorybookScreen> {
           theme: widget.storybookDelegate.light,
           darkTheme: widget.storybookDelegate.dark,
           debugShowCheckedModeBanner: false,
-          useInheritedMediaQuery: true,
           home: Scaffold(body: Center(child: wid)),
           localizationsDelegates:
               widget.storybookDelegate.localizationsDelegates,

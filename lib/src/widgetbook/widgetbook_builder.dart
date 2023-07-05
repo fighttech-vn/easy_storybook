@@ -14,36 +14,30 @@ class _HotreloadWidgetbookState extends State<HotreloadWidgetbook> {
   @override
   Widget build(BuildContext context) {
     return Widgetbook.material(
-      categories: [
-        WidgetbookCategory(
+      directories: [
+        WidgetbookComponent(
           name: 'widgets',
-          widgets: [
-            WidgetbookComponent(
+          useCases: [
+            WidgetbookUseCase(
               name: 'Button',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'elevated',
-                  builder: (context) => ElevatedButton(
+               builder: (context) => ElevatedButton(
                     onPressed: () {},
                     child: Text(
-                      context.knobs
-                          .number(
+                      context.knobs.string(
                             label: 'hello',
                           )
                           .toString(),
                     ),
                   ),
-                ),
-              ],
             ),
           ],
         )
       ],
-      themes: [
-        WidgetbookTheme(name: 'Light', data: ThemeData.light()),
-        WidgetbookTheme(name: 'Dark', data: ThemeData.dark()),
-      ],
-      appInfo: AppInfo(name: 'Example'),
+      // themes: [
+      //   WidgetbookTheme(name: 'Light', data: ThemeData.light()),
+      //   WidgetbookTheme(name: 'Dark', data: ThemeData.dark()),
+      // ],
+      // appInfo: AppInfo(name: 'Example'),
     );
   }
 }

@@ -11,7 +11,7 @@ String prettyJsonStr(Map<dynamic, dynamic> json) {
 }
 
 class LoggerInterceptor extends Interceptor {
-  final Function(DioError)? onRequestError;
+  final Function(DioException)? onRequestError;
   //For case response data is too large, dont need to show on log
   final bool Function(Response<dynamic>)? ignoreReponseDataLog;
 
@@ -53,7 +53,7 @@ class LoggerInterceptor extends Interceptor {
   }
 
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     debugPrint(prettyJsonStr({
       'from': 'onError',
       'Time': DateTime.now().toString(),
