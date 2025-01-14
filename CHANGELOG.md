@@ -1,3 +1,7 @@
+## 1.0.8
++ Add example
++ Support build Flutter 3.27
+
 ## 1.0.6
 * Update build flutter 3.10 and dart 3
 
