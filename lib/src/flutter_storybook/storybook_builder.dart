@@ -36,11 +36,11 @@ class _FlutterStorybookScreenState extends State<FlutterStorybookScreen> {
   Widget buildStorybook(StorybookFLutter storybookDelegate) {
     return Storybook(
       plugins: initializePlugins(
-        initialDeviceFrameData: DeviceFrameData(
-          device: Devices.ios.iPhone13,
-        ),
-        contentsSidePanel: true,
-        knobsSidePanel: true,
+        // initialDeviceFrameData: DeviceFrameData(
+        //   device: Devices.ios.iPhone13,
+        // ),
+        // contentsSidePanel: true,
+        // knobsSidePanel: true,
       ),
       wrapperBuilder: (ct, wid) {
         return MaterialApp(
